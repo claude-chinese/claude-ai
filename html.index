@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Claude 中文版镜像站 - 无需翻墙，无需注册，即可使用 Claude 3.7、Claude 3.5 等先进 AI 模型">
+    <meta name="keywords" content="Claude中文版,Claude镜像站,Claude国内,AI助手,Claude 3.7,无需翻墙">
+    <title>Claude 中文版 | 无需翻墙使用 Claude 3.7 Sonnet</title>
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --accent-color: #4f46e5;
+            --bg-color: #f9fafb;
+            --text-color: #1f2937;
+            --secondary-bg: #ffffff;
+            --border-color: #e5e7eb;
+            --light-accent: #eef2ff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        header {
+            background-color: var(--secondary-bg);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .hero {
+            background-color: var(--secondary-bg);
+            padding: 4rem 0;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            color: var(--primary-color);
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+        
+        h4 {
+            font-size: 1.1rem;
+            margin: 1rem 0 0.5rem;
+            color: #4b5563;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            margin: 1.5rem 0;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-button:hover {
+            background-color: var(--accent-color);
+        }
+        
+        section {
+            margin: 3rem 0;
+            background-color: var(--secondary-bg);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        
+        .divider {
+            height: 1px;
+            background-color: var(--border-color);
+            margin: 2rem 0;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background-color: var(--light-accent);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        
+        th, td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        th {
+            background-color: var(--light-accent);
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fc;
+        }
+        
+        .steps {
+            margin: 2rem 0;
+        }
+        
+        .step {
+            display: flex;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .step-number {
+            background-color: var(--primary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .mirror-sites {
+            margin: 2rem 0;
+        }
+        
+        .site-card {
+            background-color: #f8f9fc;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Claude 中文版</div>
+            <a href="https://chat.aibox365.cn" class="cta-button">立即体验</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="hero">
+            <h1>Claude 中文版 - 全新镜像站</h1>
+            <p>2025年最新的 Claude 中文版体验</p>
+            <p>无需翻墙，无需注册，即刻体验 AI 对话</p>
+            <a href="https://chat.aibox365.cn" class="cta-button">开始对话</a>
+            <h4>更新日期：2025/04/11</h4>
+        </div>
+
+        <section>
+            <h2>什么是 Claude 中文版？</h2>
+            <p><strong>Claude 中文版</strong>是 Anthropic 公司开发的 Claude AI 助手的中文优化版本。相比官方版本，我们的镜像站点为中国用户提供了更加便捷的使用体验：</p>
+            <ul>
+                <li><strong>国内直连</strong>：无需翻墙，秒速访问</li>
+                <li><strong>中文优化</strong>：针对中文语境深度优化，回答更自然流畅</li>
+                <li><strong>强大功能</strong>：支持最新的 <strong>Claude 3.7 Sonnet</strong>、<strong>Claude 3.5</strong> 及其他先进模型</li>
+                <li><strong>简单使用</strong>：扫码即用，告别繁琐注册</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🌟 推荐 Claude 中文版入口</h2>
+            
+            <div class="mirror-sites">
+                <h3>🏆 主推站点</h3>
+                <div class="site-card">
+                    <strong><a href="https://chat.aibox365.cn">chat.aibox365.cn</a></strong> - 我们的官方 Claude 中文镜像站，支持 Claude 3.7 Sonnet、Claude 3.5、GPT-4o、GPT-o1、GPT-o3、DeepSeek、Gemini 2.5 等顶级模型，无限免费使用
+                </div>
+                
+      
+            </div>
+        </section>
+
+        <section>
+            <h2>AiBox365 镜像站强大特性</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>🔮 全球顶尖模型集成</h3>
+                    <p>支持 Claude 3.7 Sonnet、GPT-4o、GPT-o1、GPT-o3、DeepSeek、Gemini 2.5 等最新最强大模型</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>🎨 AI 绘画创作</h3>
+                    <p>集成 Midjourney 和 GPT-4o 文生图功能，一句提示词即可生成精美图像</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>📊 AI PPT 生成</h3>
+                    <p>一键生成专业演示幻灯片，省时高效，告别繁琐排版</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>💬 多模型讨论</h3>
+                    <p>创新的"@模型"功能，让不同AI模型对同一问题进行讨论，碰撞出更全面的思路</p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+            
+            <p><strong>多模型讨论功能</strong>是我们的独特创新，只需在提问时@不同模型（例如：@Claude3.7 @GPT4o），多个AI模型就会接入对话，从不同角度回答您的问题，帮助您获得更全面的见解。</p>
+            
+            <p><strong>AI绘画功能</strong>支持Midjourney和GPT-4o文生图，无需复杂操作，直接在对话框中描述您想要的图像，AI即可为您创作精美视觉内容。</p>
+            
+            <p><strong>AI PPT功能</strong>让您只需输入主题和关键内容，系统自动生成专业演示文稿，包含合理的结构、精美的排版和适当的视觉元素，大幅提升工作效率。</p>
+        </section>
+
+        <section>
+            <h2>为什么选择我们的 Claude 中文版？</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>🚀 极速体验</h3>
+                    <p>国内服务器部署，响应速度快如闪电，无需等待</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>🧠 智能对话</h3>
+                    <p>搭载最新 Claude 3.7 Sonnet 模型，理解能力和创造力无与伦比</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>🇨🇳 中文优化</h3>
+                    <p>专为中文用户打造，理解语境更准确，回答更贴合本地需求</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>🛠️ 全能助手</h3>
+                    <p>写作、编程、翻译、数据分析、创意构思，一站解决</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Claude 官网与我们镜像站的对比</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>对比项</th>
+                        <th>Claude 官网</th>
+                        <th>我们的镜像站</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>访问方式</td>
+                        <td>需翻墙，延迟高</td>
+                        <td>国内直连，秒开体验</td>
+                    </tr>
+                    <tr>
+                        <td>注册使用</td>
+                        <td>需海外手机号</td>
+                        <td>扫码即用，0门槛</td>
+                    </tr>
+                    <tr>
+                        <td>语言支持</td>
+                        <td>多语言（中文支持一般）</td>
+                        <td>中文深度优化</td>
+                    </tr>
+                    <tr>
+                        <td>模型支持</td>
+                        <td>仅 Claude 3.5、3.7</td>
+                        <td>Claude 3.7、GPT-4o、GPT-o1、GPT-o3、DeepSeek、Gemini 2.5 等</td>
+                    </tr>
+                    <tr>
+                        <td>使用限制</td>
+                        <td>有使用次数限制</td>
+                        <td>无限制使用</td>
+                    </tr>
+                    <tr>
+                        <td>功能扩展</td>
+                        <td>基础对话功能</td>
+                        <td>多模型讨论、AI绘画、AI PPT等增强功能</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>常见问题解答 (FAQ)</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">使用镜像站是否需要翻墙？</div>
+                <div class="faq-answer">不需要，我们的镜像站专为国内用户设计，可直接访问，无需任何代理工具。</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">镜像站的稳定性如何？</div>
+                <div class="faq-answer">我们采用高性能服务器和CDN加速，保证99.9%的在线率和极速响应体验。</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">如何使用多模型讨论功能？</div>
+                <div class="faq-answer">只需在提问时使用@符号，如"@Claude3.7 @GPT4o 请分析这个问题..."，两个模型就会同时参与讨论。</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">AI绘图功能如何使用？</div>
+                <div class="faq-answer">选择Midjourney或GPT-4o绘图模式，输入详细的图像描述，系统会根据您的描述生成相应图像。</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">镜像站是否收费？</div>
+                <div class="faq-answer">基础功能完全免费，部分高级功能可能需要适量付费，性价比远高于直接使用官方版本。</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">使用镜像站是否安全？</div>
+                <div class="faq-answer">我们采用全程加密传输，不存储敏感对话内容，保障用户隐私安全。</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>用户使用场景</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>✍️ 内容创作</h3>
+                    <p>撰写文章、生成创意、编写脚本，激发灵感</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>💻 编程开发</h3>
+                    <p>代码分析、Bug修复、算法优化、技术学习</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>📚 学习辅助</h3>
+                    <p>知识解答、论文指导、学科辅导、考试准备</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>🏢 职场助手</h3>
+                    <p>邮件起草、AI PPT制作、数据分析、会议总结</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Claude 中文版 - 为中国用户打造的AI智能助手</p>
+            <p>联系我们: <a href="mailto:contact@aibox365.cn">contact@aibox365.cn</a></p>
+        </div>
+    </footer>
+</body>
+</html> 
