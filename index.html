@@ -253,7 +253,7 @@
             <p>2025年最新的 Claude 中文版体验</p>
             <p>无需翻墙，无需注册，即刻体验 AI 对话</p>
             <a href="https://chat.aibox365.cn" class="cta-button">开始对话</a>
-            <h4>更新日期：2025/04/11</h4>
+            <h4>更新日期：<span id="current-date"></span></h4>
         </div>
 
         <section>
@@ -453,5 +453,13 @@
             <p>联系我们: <a href="mailto:contact@aibox365.cn">contact@aibox365.cn</a></p>
         </div>
     </footer>
+    <script>
+        // 设置更新日期为当前日期
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('zh-CN', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit'
+        }).replace(/\//g, '/');
+    </script>
 </body>
 </html> 
